@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">מחשבון פיצה</string>
+    <string name="action_settings">הגדרות</string>
+    <string name="num_of_pizas">מספר פיצות</string>
+</resources>
