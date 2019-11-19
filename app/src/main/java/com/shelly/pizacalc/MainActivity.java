@@ -1,5 +1,8 @@
 package com.shelly.pizacalc;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -9,11 +12,21 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.os.Message;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.Toast;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,24 +36,58 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
 
-        final TextView doghWaight = findViewById(R.id.resultView);
         final EditText numOfBalls = findViewById(R.id.numOfBalls);
         final EditText ballWeight = findViewById(R.id.ballWeight);
 
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.Calculate);
+        Button receiptBan = findViewById(R.id.ReceiptBtw);
+        PizzaReciepe pizzaReciepe = null;
+
+        try {
+            FileInputStream FileStream = new FileInputStream(getApplicationInfo().dataDir + "/Receipt.txt");
+
+            ObjectInputStream objectInputStream = new ObjectInputStream(FileStream);
+            try {
+                pizzaReciepe = PizzaReciepe.getInstance((PizzaReciepe) objectInputStream.readObject());
+
+            }catch (ClassNotFoundException ext)
+            {
+                new AlertDialog.Builder(this).setMessage(ext.getMessage()).create().show();
+            }
+
+        } catch (FileNotFoundException ext) {
+                pizzaReciepe = PizzaReciepe.getInstance();
+
+        }catch (IOException ex) {
+            new AlertDialog.Builder (this).setTitle("שגיאת קובץ").setMessage(ex.getMessage()).create().show();
+        }
+
+        numOfBalls.setText(String.valueOf(pizzaReciepe.NumOfBalls));
+        ballWeight.setText(String.valueOf(pizzaReciepe.BallWeight));
+
+
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                //        .setAction("Action", null).show();
 
-                int result = Integer.parseInt (numOfBalls.getText().toString()) * Integer.parseInt(ballWeight.getText().toString());
-                doghWaight.setText(String.valueOf(result));
+                double result = Double.valueOf (numOfBalls.getText().toString()) * Double.valueOf(ballWeight.getText().toString());
                 Intent intent = new Intent(getBaseContext(),Recepie.class).putExtra("Total Weight",result);
                 startActivity(intent);
-                finish();
+                //finish();
+            }
+        });
+
+        receiptBan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(),BakersRecipe.class);
+                startActivity(intent);
+                //finish();
             }
         });
     }
@@ -59,6 +106,18 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+        switch (id) {
+            case R.id.action_settings:
+                Intent intent = new Intent(getApplicationContext(),SettingsActivity.class);
+                startActivity(intent);
+                break;
+
+            case R.id.action_about:
+                Intent intent1 = new Intent(this,AboutActivity.class);
+                startActivity(intent1);
+                break;
+
+        }
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;

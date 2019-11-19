@@ -2,5 +2,18 @@
 <resources>
     <string name="app_name">מחשבון פיצה</string>
     <string name="action_settings">הגדרות</string>
-    <string name="num_of_pizas">מספר פיצות</string>
+    <string name="num_of_pizas">מספר כדורים</string>
+    <string name="flour">קמח</string>
+    <string name="watter">מים</string>
+    <string name="dryInstant">שמרים יבשים</string>
+    <string name="olive_oil">שמן זית</string>
+    <string name="salt">מלח</string>
+    <string name="sugar">סוכר</string>
+    <string name="bakers_recipe_title">מתכון באחוזים</string>
+    <string name="edit_recipe">ערוך מתכון</string>
+    <string name="a_ball_weight">משקל כדור</string>
+    <string name="title_activity_about">אודות</string>
+    <string name="freshYeast">שמרים טריים</string>
+    <string name="dryActive">שמרים אקטיביים</string>
+    <string name="gram">גרם</string>
 </resources>
