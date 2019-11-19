@@ -1,17 +1,12 @@
 package com.shelly.pizacalc;
 
-import android.app.AlertDialog;
-
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
 
-public class PizzaReciepe implements Serializable {
-    public static PizzaReciepe instance = null;
+public class PizzaRecipe implements Serializable {
+    public static PizzaRecipe instance = null;
     public double flourInPercentage = 100;
     public double watterInPercentage = 60;
     public double yeastInPercentage = 0.06;
@@ -54,7 +49,7 @@ public class PizzaReciepe implements Serializable {
     private double Flour,Watter,Salt,Sugar,OliveOil,Yeast;
     ;
 
-    PizzaReciepe () {
+    PizzaRecipe() {
     }
 
     public void Calculate (double TotalWeight) {
@@ -70,15 +65,15 @@ public class PizzaReciepe implements Serializable {
 
     }
 
-    public static PizzaReciepe getInstance () {
+    public static PizzaRecipe getInstance () {
         if (instance == null)
         {
-            instance = new PizzaReciepe();
+            instance = new PizzaRecipe();
         }
         return instance;
     }
 
-    public static PizzaReciepe getInstance(PizzaReciepe pizzaReciepe)
+    public static PizzaRecipe getInstance(PizzaRecipe pizzaReciepe)
     {
         if (instance == null)
         {
@@ -143,10 +138,10 @@ public class PizzaReciepe implements Serializable {
     public void changeWeightMeasureUnit (UnitOfMeasure unitOfMeasure) {
         if (this.unitOfMesure != unitOfMeasure) {
             if (unitOfMeasure == UnitOfMeasure.Ounce) {
-                BallWeight /= OneOzInGrams;
+                BallWeight = RoundDouble(2,BallWeight/OneOzInGrams);
             }
             else
-                BallWeight *= OneOzInGrams;
+                BallWeight = RoundDouble(0,BallWeight * OneOzInGrams);
 
             this.unitOfMesure = unitOfMeasure;
         }

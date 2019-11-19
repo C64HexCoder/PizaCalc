@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 
 public class Recepie extends AppCompatActivity {
-    PizzaReciepe pizzaReciepe = PizzaReciepe.getInstance();
+    PizzaRecipe pizzaReciepe = PizzaRecipe.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

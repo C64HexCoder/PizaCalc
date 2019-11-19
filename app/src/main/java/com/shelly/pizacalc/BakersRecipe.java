@@ -24,7 +24,7 @@ public class BakersRecipe extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bakers_recipe);
 
-        final PizzaReciepe pizzaReciepe = PizzaReciepe.getInstance();
+        final PizzaRecipe pizzaReciepe = PizzaRecipe.getInstance();
 
         FloatingActionButton button = findViewById(R.id.updateFloatingButton);
         final CheckBox sugarCB = findViewById(R.id.sugarCB), oliveOilCB = findViewById(R.id.oliveOilCB);
@@ -32,9 +32,9 @@ public class BakersRecipe extends AppCompatActivity {
         watterET = findViewById(R.id.watterEd), yeastET = findViewById(R.id.yeastEd), saltET = findViewById(R.id.saltEd);
         TextView yeastTV = findViewById(R.id.yestTV);
 
-        if (pizzaReciepe.yeastType == PizzaReciepe.YeastType.DryInstent)
+        if (pizzaReciepe.yeastType == PizzaRecipe.YeastType.DryInstent)
             yeastTV.setText(R.string.dryInstant);
-        else if (pizzaReciepe.yeastType == PizzaReciepe.YeastType.DryActive)
+        else if (pizzaReciepe.yeastType == PizzaRecipe.YeastType.DryActive)
             yeastTV.setText(R.string.dryActive);
         else
             yeastTV.setText(R.string.freshYeast);

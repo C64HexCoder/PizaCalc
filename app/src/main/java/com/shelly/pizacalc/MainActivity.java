@@ -1,34 +1,31 @@
 package com.shelly.pizacalc;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.Context;
 import android.content.Intent;
+import android.media.session.MediaSessionManager;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.os.Message;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 
 public class MainActivity extends AppCompatActivity {
+    PizzaRecipe pizzaReciepe = null;
+
+    EditText numOfBalls;
+    EditText ballWeight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,21 +33,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
 
-        final EditText numOfBalls = findViewById(R.id.numOfBalls);
-        final EditText ballWeight = findViewById(R.id.ballWeight);
+        numOfBalls = findViewById(R.id.numOfBalls);
+        ballWeight = findViewById(R.id.ballWeight);
 
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.Calculate);
+        FloatingActionButton recipe = findViewById(R.id.Calculate);
         Button receiptBan = findViewById(R.id.ReceiptBtw);
-        PizzaReciepe pizzaReciepe = null;
+
 
         try {
             FileInputStream FileStream = new FileInputStream(getApplicationInfo().dataDir + "/Receipt.txt");
 
             ObjectInputStream objectInputStream = new ObjectInputStream(FileStream);
             try {
-                pizzaReciepe = PizzaReciepe.getInstance((PizzaReciepe) objectInputStream.readObject());
+                pizzaReciepe = PizzaRecipe.getInstance((PizzaRecipe) objectInputStream.readObject());
 
             }catch (ClassNotFoundException ext)
             {
@@ -58,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
         } catch (FileNotFoundException ext) {
-                pizzaReciepe = PizzaReciepe.getInstance();
+                pizzaReciepe = PizzaRecipe.getInstance();
 
         }catch (IOException ex) {
             new AlertDialog.Builder (this).setTitle("שגיאת קובץ").setMessage(ex.getMessage()).create().show();
@@ -69,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        fab.setOnClickListener(new View.OnClickListener() {
+        recipe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -110,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_settings:
                 Intent intent = new Intent(getApplicationContext(),SettingsActivity.class);
                 startActivity(intent);
+                //finish();
                 break;
 
             case R.id.action_about:
@@ -124,5 +122,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        numOfBalls.setText(String.valueOf(pizzaReciepe.NumOfBalls));
+        ballWeight.setText(String.valueOf(pizzaReciepe.BallWeight));
     }
 }
