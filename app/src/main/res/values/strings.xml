@@ -8,7 +8,6 @@
     <string name="olive_oil">Olive Oil</string>
     <string name="salt">Salt</string>
     <string name="sugar">Sugar</string>
-    <string name="title_activity_about">About</string>
     <string name="bakers_recipe_title">A percentage recipe</string>
     <string name="edit_recipe">Edit recipe</string>
     <string name="a_ball_weight">A ball weight</string>
@@ -31,4 +30,5 @@
     <string name="freshYeast">Fresh Yeast</string>
     <string name="dryActive">Active D. Yeast</string>
     <string name="gram">Gram</string>
+    <string name="title_activity_about">About</string>
 </resources>

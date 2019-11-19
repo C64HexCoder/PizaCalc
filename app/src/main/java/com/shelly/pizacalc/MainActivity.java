@@ -6,20 +6,28 @@ import android.media.session.MediaSessionManager;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 public class MainActivity extends AppCompatActivity {
     PizzaRecipe pizzaReciepe = null;
@@ -38,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
 
-        FloatingActionButton recipe = findViewById(R.id.Calculate);
+        FloatingActionButton recipe = findViewById(R.id.calculateRecipe);
         Button receiptBan = findViewById(R.id.ReceiptBtw);
 
 
@@ -64,6 +72,46 @@ public class MainActivity extends AppCompatActivity {
         numOfBalls.setText(String.valueOf(pizzaReciepe.NumOfBalls));
         ballWeight.setText(String.valueOf(pizzaReciepe.BallWeight));
 
+
+        numOfBalls.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                pizzaReciepe.NumOfBalls = Double.valueOf(s.toString());
+                SavePizzaRecipeToFile();
+
+                Toast.makeText(getApplicationContext(),"PizzaRecipe Updated",Toast.LENGTH_LONG).show();
+            }
+        });
+
+        ballWeight.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                pizzaReciepe.BallWeight = Double.valueOf(s.toString());
+                SavePizzaRecipeToFile();
+
+                Toast.makeText(getApplicationContext(),"PizzaRecipe Updated",Toast.LENGTH_LONG).show();
+            }
+        });
 
 
         recipe.setOnClickListener(new View.OnClickListener() {
@@ -130,5 +178,23 @@ public class MainActivity extends AppCompatActivity {
 
         numOfBalls.setText(String.valueOf(pizzaReciepe.NumOfBalls));
         ballWeight.setText(String.valueOf(pizzaReciepe.BallWeight));
+    }
+
+
+    private void SavePizzaRecipeToFile()
+    {
+
+        try
+        {
+            FileOutputStream fileOutput = new FileOutputStream(getApplicationInfo().dataDir + "/Receipt.txt");
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutput);
+
+            objectOutputStream.writeObject(pizzaReciepe);
+
+
+        } catch (IOException ext)
+        {
+            new AlertDialog.Builder (MainActivity.this).setTitle("File Error").setMessage(ext.getMessage()).create().show();
+        }
     }
 }

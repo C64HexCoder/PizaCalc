@@ -12,8 +12,8 @@
     <string name="bakers_recipe_title">מתכון באחוזים</string>
     <string name="edit_recipe">ערוך מתכון</string>
     <string name="a_ball_weight">משקל כדור</string>
-    <string name="title_activity_about">אודות</string>
     <string name="freshYeast">שמרים טריים</string>
     <string name="dryActive">שמרים אקטיביים</string>
     <string name="gram">גרם</string>
+    <string name="title_activity_about">אודות</string>
 </resources>
