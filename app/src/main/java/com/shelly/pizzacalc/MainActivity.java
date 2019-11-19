@@ -1,4 +1,4 @@
-package com.shelly.pizacalc;
+package com.shelly.pizzacalc;
 
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -16,7 +16,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

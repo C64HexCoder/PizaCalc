@@ -1,4 +1,4 @@
-package com.shelly.pizacalc;
+package com.shelly.pizzacalc;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -154,6 +154,10 @@ public class PizzaRecipe implements Serializable {
 
             this.unitOfMesure = unitOfMeasure;
         }
+    }
+
+    public String getBallWeight () {
+        return String.valueOf(RoundDouble(2,BallWeight))+" "+getWeightMeasureSimbole();
     }
 
     /*public static String savePizzaReciep (String dataDir)

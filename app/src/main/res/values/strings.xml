@@ -31,4 +31,6 @@
     <string name="dryActive">Active D. Yeast</string>
     <string name="gram">Gram</string>
     <string name="title_activity_about">About</string>
+    <string name="ounce">Ounce</string>
+    <string name="weight_units">Weight Units</string>
 </resources>

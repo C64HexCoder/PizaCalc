@@ -1,4 +1,4 @@
-package com.shelly.pizacalc;
+package com.shelly.pizzacalc;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +14,7 @@ import java.io.ObjectOutputStream;
 public class SettingsActivity extends AppCompatActivity {
     final PizzaRecipe pizzaReciepe = PizzaRecipe.getInstance();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +24,7 @@ public class SettingsActivity extends AppCompatActivity {
         RadioButton dryActiveYeast = findViewById(R.id.dryActiveYeastRB);
         RadioButton freshYeast = findViewById(R.id.freshYeastRB);
         RadioButton milRB = findViewById(R.id.milRB);
-        RadioButton gramRB = findViewById(R.id.gTB);
+        final RadioButton gramRB = findViewById(R.id.gTB);
         RadioButton UnitgramRB = findViewById(R.id.gramRB);
         RadioButton UnitOunceRB = findViewById(R.id.ounceRB);
 
@@ -60,6 +61,7 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 pizzaReciepe.changeLiquidMeasureUnit(PizzaRecipe.LiquidMeasureUnit.Grams);
+
             }
         });
 
@@ -68,6 +70,8 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 pizzaReciepe.changeWeightMeasureUnit(PizzaRecipe.UnitOfMeasure.Grams);
                 SavePizzaRecipeToFile();
+                //gramRB.setText(R.string.gram);
+                //recreate();
             }
         });
 
@@ -76,6 +80,8 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 pizzaReciepe.changeWeightMeasureUnit(PizzaRecipe.UnitOfMeasure.Ounce);
                 SavePizzaRecipeToFile();
+                //gramRB.setText(R.string.ounce);
+                //recreate();
             }
         });
 
@@ -128,6 +134,7 @@ public class SettingsActivity extends AppCompatActivity {
                }
            }
        });
+
     }
 
     private void SavePizzaRecipeToFile()
@@ -146,4 +153,6 @@ public class SettingsActivity extends AppCompatActivity {
             new AlertDialog.Builder (SettingsActivity.this).setTitle("File Error").setMessage(ext.getMessage()).create().show();
         }
     }
+
+
 }

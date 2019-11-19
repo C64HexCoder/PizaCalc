@@ -5,7 +5,7 @@
     <string name="num_of_pizas">מספר כדורים</string>
     <string name="flour">קמח</string>
     <string name="watter">מים</string>
-    <string name="dryInstant">שמרים יבשים</string>
+    <string name="dryInstant">שמרים אינסטנט</string>
     <string name="olive_oil">שמן זית</string>
     <string name="salt">מלח</string>
     <string name="sugar">סוכר</string>
@@ -16,4 +16,6 @@
     <string name="dryActive">שמרים אקטיביים</string>
     <string name="gram">גרם</string>
     <string name="title_activity_about">אודות</string>
+    <string name="ounce">אונקיה</string>
+    <string name="weight_units">יחידות משקל</string>
 </resources>

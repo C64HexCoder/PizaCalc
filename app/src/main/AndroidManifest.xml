@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.shelly.pizacalc">
+    package="com.shelly.pizzacalc">
 
     <application
         android:allowBackup="true"
@@ -9,16 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".InstructionActivity"></activity>
-        <activity android:name=".SettingsActivity" />
+        <activity android:name="com.shelly.pizzacalc.InstructionActivity"></activity>
+        <activity android:name="com.shelly.pizzacalc.SettingsActivity" />
         <activity
-            android:name=".AboutActivity"
+            android:name="com.shelly.pizzacalc.AboutActivity"
             android:label="@string/title_activity_about"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".BakersRecipe" />
-        <activity android:name=".CalculateRecepie" />
+        <activity android:name="com.shelly.pizzacalc.BakersRecipe" />
+        <activity android:name="com.shelly.pizzacalc.CalculateRecepie" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.shelly.pizzacalc.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

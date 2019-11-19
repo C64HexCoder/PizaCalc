@@ -29,11 +29,11 @@
         android:id="@+id/ballWeight"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
+        android:contentDescription="משקל כל כדור"
         android:ems="10"
         android:inputType="numberDecimal"
         android:selectAllOnFocus="true"
         android:text="250"
-        android:contentDescription="משקל כל כדור"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/numOfBalls"
         app:layout_constraintStart_toStartOf="@+id/numOfBalls"
@@ -73,5 +73,17 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/weightUnitTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/gram"
+        app:layout_constraintBottom_toBottomOf="@+id/ballWeight"
+        app:layout_constraintStart_toEndOf="@+id/ballWeight"
+        app:layout_constraintTop_toTopOf="@+id/ballWeight" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

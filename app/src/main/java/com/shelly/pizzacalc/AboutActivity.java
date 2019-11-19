@@ -1,4 +1,4 @@
-package com.shelly.pizacalc;
+package com.shelly.pizzacalc;
 
 import android.os.Bundle;
 

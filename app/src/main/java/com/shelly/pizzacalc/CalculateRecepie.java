@@ -1,4 +1,4 @@
-package com.shelly.pizacalc;
+package com.shelly.pizzacalc;
 
 import androidx.appcompat.app.AppCompatActivity;
 
