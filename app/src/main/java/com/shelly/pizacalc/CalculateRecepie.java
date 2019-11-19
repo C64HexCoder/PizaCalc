@@ -8,13 +8,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 
-public class Recepie extends AppCompatActivity {
+public class CalculateRecepie extends AppCompatActivity {
     PizzaRecipe pizzaReciepe = PizzaRecipe.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recepie);
+        setContentView(R.layout.activity_calculate_recepie);
 
         EditText flour = findViewById(R.id.flourEd);
         EditText watter = findViewById(R.id.watterEd);
@@ -24,6 +24,7 @@ public class Recepie extends AppCompatActivity {
         EditText oliveOil = findViewById(R.id.oliveOilED);
         TextView sugarTV = findViewById(R.id.sugarTV);
         TextView oliveOilTV = findViewById(R.id.oliveOilTV);
+        TextView yeastTV = findViewById(R.id.calc_recipt_yeastTV);
 
         double TotalWeight;
         TotalWeight = getIntent().getDoubleExtra("Total Weight",250);
@@ -37,6 +38,13 @@ public class Recepie extends AppCompatActivity {
         salt.setText(pizzaReciepe.getSalt());
         sugar.setText(pizzaReciepe.getSugar());
         oliveOil.setText(pizzaReciepe.getOliveOil());
+
+        if (pizzaReciepe.yeastType == PizzaRecipe.YeastType.DryActive)
+            yeastTV.setText(R.string.dryActive);
+        else if (pizzaReciepe.yeastType == PizzaRecipe.YeastType.DryInstent)
+            yeastTV.setText(R.string.dryInstant);
+        else
+            yeastTV.setText(R.string.freshYeast);
 
         if (pizzaReciepe.UseSuger()) {
             sugar.setVisibility(View.VISIBLE);

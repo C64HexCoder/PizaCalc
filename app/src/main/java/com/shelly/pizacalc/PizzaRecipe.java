@@ -55,13 +55,19 @@ public class PizzaRecipe implements Serializable {
     public void Calculate (double TotalWeight) {
 
         Flour = TotalWeight * 100/TotalPercentage;
-        Watter =  Flour * watterInPercentage/100;
+
         Yeast = yeastInPercentage/100 * Flour;
         Salt = saltInPercentage /100 * Flour;
-
-        // optional by user
-        Sugar = sugarInPercentage /100 * Flour;
+        Sugar = sugarInPercentage / 100 * Flour;
         calculateOliveOil();
+
+        if (unitOfMesure == UnitOfMeasure.Grams) {
+            Watter = Flour * watterInPercentage / 100;
+        }
+        else {
+            Watter = Flour * watterInPercentage/100 * OneOzInGrams;
+
+        }
 
     }
 
@@ -108,7 +114,10 @@ public class PizzaRecipe implements Serializable {
     }
 
     public String getSugar () {
-        return String.valueOf((int) RoundDouble(0,Sugar))+" "+getWeightMeasureSimbole();
+        if (unitOfMesure == UnitOfMeasure.Grams)
+            return String.valueOf((int) RoundDouble(0,Sugar))+" "+getWeightMeasureSimbole();
+        else
+            return String.valueOf(RoundDouble(2,Sugar))+" "+getWeightMeasureSimbole();
     }
 
     public String getOliveOil () {
@@ -165,9 +174,12 @@ public class PizzaRecipe implements Serializable {
 
     private void calculateOliveOil () {
         if (liquidMeasureUnit == LiquidMeasureUnit.Milliliter)
-            OliveOil = (int) RoundDouble(0, oliveOilInPercentage /100 * Flour);
+            if (unitOfMesure == UnitOfMeasure.Grams)
+                OliveOil = oliveOilInPercentage /100 * Flour;
+            else
+                OliveOil = oliveOilInPercentage /100 * Flour * OneOzInGrams;
         else
-            OliveOil= (int) RoundDouble(0, oliveOilInPercentage /100 * Flour * oliveOilSpecificGravity);
+            OliveOil = oliveOilInPercentage /100 * Flour * oliveOilSpecificGravity;
     }
 
     private BigInteger RoundToInt (BigDecimal bigDecimal) {

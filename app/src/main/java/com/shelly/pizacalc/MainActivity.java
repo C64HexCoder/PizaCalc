@@ -2,24 +2,20 @@ package com.shelly.pizacalc;
 
 import android.app.AlertDialog;
 import android.content.Intent;
-import android.media.session.MediaSessionManager;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.FileInputStream;
@@ -89,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 pizzaReciepe.NumOfBalls = Double.valueOf(s.toString());
                 SavePizzaRecipeToFile();
 
-                Toast.makeText(getApplicationContext(),"PizzaRecipe Updated",Toast.LENGTH_LONG).show();
+                //Toast.makeText(getApplicationContext(),"PizzaRecipe Updated",Toast.LENGTH_LONG).show();
             }
         });
 
@@ -109,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
                 pizzaReciepe.BallWeight = Double.valueOf(s.toString());
                 SavePizzaRecipeToFile();
 
-                Toast.makeText(getApplicationContext(),"PizzaRecipe Updated",Toast.LENGTH_LONG).show();
+                //Toast.makeText(getApplicationContext(),"PizzaRecipe Updated",Toast.LENGTH_LONG).show();
             }
         });
 
@@ -121,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
                 //        .setAction("Action", null).show();
 
                 double result = Double.valueOf (numOfBalls.getText().toString()) * Double.valueOf(ballWeight.getText().toString());
-                Intent intent = new Intent(getBaseContext(),Recepie.class).putExtra("Total Weight",result);
+                Intent intent = new Intent(getBaseContext(), CalculateRecepie.class).putExtra("Total Weight",result);
                 startActivity(intent);
                 //finish();
             }

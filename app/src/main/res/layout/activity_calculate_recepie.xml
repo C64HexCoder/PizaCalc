@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Recepie">
+    tools:context=".CalculateRecepie">
 
     <EditText
         android:id="@+id/oliveOilED"
@@ -62,7 +62,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/calc_recipt_yeastTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/dryInstant"
@@ -86,7 +86,7 @@
         android:layout_height="wrap_content"
         android:text="@string/watter"
         app:layout_constraintBottom_toBottomOf="@+id/watterEd"
-        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintStart_toStartOf="@+id/calc_recipt_yeastTV"
         app:layout_constraintTop_toTopOf="@+id/watterEd" />
 
     <EditText
