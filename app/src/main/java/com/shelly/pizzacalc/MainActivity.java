@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         FloatingActionButton recipe = findViewById(R.id.calculateRecipe);
-        Button receiptBan = findViewById(R.id.ReceiptBtw);
+        ImageButton receiptBan = findViewById(R.id.ReceiptBtw);
 
 
         try {
