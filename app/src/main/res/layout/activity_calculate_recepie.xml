@@ -37,7 +37,6 @@
         app:layout_constraintTop_toBottomOf="@+id/saltED" />
 
     <TextView
-        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/flour"

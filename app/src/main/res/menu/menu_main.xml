@@ -4,11 +4,14 @@
     tools:context="com.shelly.pizzacalc.MainActivity">
     <item
         android:id="@+id/action_settings"
+        android:icon="@mipmap/options"
         android:orderInCategory="100"
         android:title="@string/action_settings"
-        app:showAsAction="never" />
+        app:showAsAction="always|withText" />
     <item
         android:id="@+id/action_about"
+        android:icon="@mipmap/help"
         android:orderInCategory="101"
-        android:title="@string/title_activity_about" />
+        android:title="@string/title_activity_about"
+        app:showAsAction="always" />
 </menu>

@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         ballWeight.setText(String.valueOf(pizzaReciepe.BallWeight));
 
 
-        numOfBalls.addTextChangedListener(new TextWatcher() {
+        /*numOfBalls.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
 
                 //Toast.makeText(getApplicationContext(),"PizzaRecipe Updated",Toast.LENGTH_LONG).show();
             }
-        });
+        }); */
 
 
         recipe.setOnClickListener(new View.OnClickListener() {
@@ -172,8 +172,38 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
+ //       numOfBalls.setText(String.valueOf(pizzaReciepe.NumOfBalls));
+ //       ballWeight.setText(String.valueOf(pizzaReciepe.BallWeight));
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         numOfBalls.setText(String.valueOf(pizzaReciepe.NumOfBalls));
         ballWeight.setText(String.valueOf(pizzaReciepe.BallWeight));
+
+    }
+
+    /*@Override
+    protected void onPause() {
+        super.onPause();
+        SavePizzaRecipeToFile();
+    }*/
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        pizzaReciepe.NumOfBalls = Double.valueOf(numOfBalls.getText().toString());
+        pizzaReciepe.BallWeight = Double.valueOf(ballWeight.getText().toString());
+        SavePizzaRecipeToFile();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    //    pizzaReciepe.NumOfBalls = Double.valueOf(numOfBalls.getText().toString());
+     //   pizzaReciepe.BallWeight = Double.valueOf(ballWeight.getText().toString());
+    //    SavePizzaRecipeToFile();
     }
 
 
