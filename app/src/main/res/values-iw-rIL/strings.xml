@@ -15,4 +15,10 @@
     <string name="gram">גרם</string>
     <string name="title_activity_about">אודות</string>
     <string name="weight_units">יחידות משקל</string>
+    <string name="settings_instant_dry_yeast">שמרים יבשים אינסטנט</string>
+    <string name="settings_active_dry_yeast">שמרים יבשים אקטיביים</string>
+    <string name="settings_yeast">שמרים</string>
+    <string name="ounce">אונקיה</string>
+    <string name="Liquid_measurring_unit">יחדת מידה לנוזלים</string>
+    <string name="millilitter">מיליליטר</string>
 </resources>

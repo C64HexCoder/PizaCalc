@@ -20,4 +20,10 @@
     <string name="gram">Gram</string>
     <string name="title_activity_about">About</string>
     <string name="weight_units">Weight Units</string>
+    <string name="settings_instant_dry_yeast">Instant dry yeast</string>
+    <string name="settings_active_dry_yeast">Active dry yeast</string>
+    <string name="settings_yeast">Yeast</string>
+    <string name="ounce">Ounce</string>
+    <string name="Liquid_measurring_unit">Liquid measuring unit</string>
+    <string name="millilitter">Millilitter</string>
 </resources>

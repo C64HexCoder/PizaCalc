@@ -21,26 +21,26 @@
             android:id="@+id/dryInstenYeasttRB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="שמרים יבשים אינסטנט" />
+            android:text="@string/settings_instant_dry_yeast" />
 
         <RadioButton
             android:id="@+id/dryActiveYeastRB"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="שמרים יבשים אקטיב" />
+            android:text="@string/settings_active_dry_yeast" />
 
         <RadioButton
             android:id="@+id/freshYeastRB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="שמרים טריים" />
+            android:text="@string/freshYeast" />
     </RadioGroup>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:text="שמרים"
+        android:text="@string/settings_yeast"
         app:layout_constraintBottom_toTopOf="@+id/radioGroup"
         app:layout_constraintStart_toStartOf="@+id/radioGroup" />
 
@@ -57,20 +57,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="גרם g" />
+            android:text="@string/gram" />
 
         <RadioButton
             android:id="@+id/ounceRB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="אונקיה Oz" />
+            android:text="@string/ounce" />
     </RadioGroup>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:text="יחידת משקל"
+        android:text="@string/weight_units"
         app:layout_constraintBottom_toTopOf="@+id/radioGroup2"
         app:layout_constraintStart_toStartOf="@+id/radioGroup2" />
 
@@ -87,7 +87,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="מיליליטר" />
+            android:text="@string/millilitter" />
 
         <RadioButton
             android:id="@+id/gTB"
@@ -101,7 +101,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:text="יחידת מידה לנוזלים"
+        android:text="@string/Liquid_measurring_unit"
         app:layout_constraintBottom_toTopOf="@+id/radioGroup3"
         app:layout_constraintStart_toStartOf="@+id/radioGroup3" />
 </androidx.constraintlayout.widget.ConstraintLayout>
