@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="a_ball_weight">"وزن كل كرة "</string>
+    <string name="app_name">حاسبة البيتزا</string>
+    <string name="flour">قمح</string>
+    <string name="num_of_pizas">"عدد الكرات "</string>
+    <string name="olive_oil">"زيت الزيتون "</string>
+    <string name="salt">ملح</string>
+    <string name="sugar">سكر</string>
+    <string name="watter">ماء</string>
+    <string name="dryInstant">"الخميرة الفورية "</string>
+    <string name="action_settings">اعدادات</string>
+    <string name="dryActive">الخميرة النشطة</string>
+    <string name="freshYeast">الخميرة الطازجة</string>
+    <string name="gram">G</string>
+    <string name="title_activity_about">حول</string>
+</resources>

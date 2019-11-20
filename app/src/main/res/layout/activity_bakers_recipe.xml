@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BakersRecipe">
+
+    <EditText
+        android:id="@+id/flourEd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:editable="false"
+        android:ems="10"
+        android:enabled="false"
+        android:inputType="numberDecimal"
+        android:text="100"
+        android:textColor="#F44336"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+    <EditText
+        android:id="@+id/watterEd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:selectAllOnFocus="true"
+        android:text="60"
+        app:layout_constraintEnd_toEndOf="@+id/flourEd"
+        app:layout_constraintStart_toStartOf="@+id/flourEd"
+        app:layout_constraintTop_toBottomOf="@+id/flourEd" />
+
+    <EditText
+        android:id="@+id/yeastEd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:selectAllOnFocus="true"
+        android:text="0.06"
+        app:layout_constraintEnd_toEndOf="@+id/watterEd"
+        app:layout_constraintStart_toStartOf="@+id/watterEd"
+        app:layout_constraintTop_toBottomOf="@+id/watterEd" />
+
+    <EditText
+        android:id="@+id/saltEd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:selectAllOnFocus="true"
+        android:text="3"
+        app:layout_constraintEnd_toEndOf="@+id/yeastEd"
+        app:layout_constraintStart_toStartOf="@+id/yeastEd"
+        app:layout_constraintTop_toBottomOf="@+id/yeastEd" />
+
+    <EditText
+        android:id="@+id/sugarEd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:enabled="false"
+        android:inputType="numberDecimal"
+        android:selectAllOnFocus="true"
+        android:text="1.25"
+        app:layout_constraintEnd_toEndOf="@+id/saltEd"
+        app:layout_constraintStart_toStartOf="@+id/saltEd"
+        app:layout_constraintTop_toBottomOf="@+id/saltEd" />
+
+
+    <EditText
+        android:id="@+id/oliveOilEd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:enabled="false"
+        android:inputType="numberDecimal"
+        android:selectAllOnFocus="true"
+        android:text="2"
+        app:layout_constraintEnd_toEndOf="@+id/sugarEd"
+        app:layout_constraintStart_toStartOf="@+id/sugarEd"
+        app:layout_constraintTop_toBottomOf="@+id/sugarEd" />
+
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="6dp"
+        android:text="@string/flour"
+        app:layout_constraintBottom_toBottomOf="@+id/flourEd"
+        app:layout_constraintEnd_toStartOf="@+id/flourEd"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/flourEd" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="6dp"
+        android:text="@string/watter"
+        app:layout_constraintBottom_toBottomOf="@+id/watterEd"
+        app:layout_constraintStart_toStartOf="@+id/textView7"
+        app:layout_constraintTop_toTopOf="@+id/watterEd" />
+
+    <TextView
+        android:id="@+id/yestTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="6dp"
+        android:text="@string/dryInstant"
+        app:layout_constraintBottom_toBottomOf="@+id/yeastEd"
+        app:layout_constraintStart_toStartOf="@+id/textView8"
+        app:layout_constraintTop_toTopOf="@+id/yeastEd" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="6dp"
+        android:text="@string/salt"
+        app:layout_constraintBottom_toBottomOf="@+id/saltEd"
+        app:layout_constraintStart_toStartOf="@+id/yestTV"
+        app:layout_constraintTop_toTopOf="@+id/saltEd" />
+
+
+    <CheckBox
+        android:id="@+id/sugarCB"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:gravity="center"
+        android:text="@string/sugar"
+        app:layout_constraintBottom_toBottomOf="@+id/sugarEd"
+        app:layout_constraintStart_toStartOf="@+id/textView10"
+        app:layout_constraintTop_toTopOf="@+id/sugarEd" />
+
+    <CheckBox
+        android:id="@+id/oliveOilCB"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="@string/olive_oil"
+        app:layout_constraintBottom_toBottomOf="@+id/oliveOilEd"
+        app:layout_constraintStart_toStartOf="@+id/sugarCB"
+        app:layout_constraintTop_toTopOf="@+id/oliveOilEd" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="מתכון באחוזים"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/updateFloatingButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#FAAA00"
+        android:clickable="true"
+        android:src="@mipmap/update"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

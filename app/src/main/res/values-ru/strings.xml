@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">"Калькулятор пиццы "</string>
+    <string name="dryInstant">Сухие дрожжи</string>
+    <string name="a_ball_weight">Вес каждого мяча</string>
+    <string name="flour">мучной</string>
+    <string name="num_of_pizas">Количество шаров</string>
+    <string name="olive_oil">Оливковое масло</string>
+    <string name="salt">соль</string>
+    <string name="sugar">сахар</string>
+    <string name="watter">воды</string>
+</resources>

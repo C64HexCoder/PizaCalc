@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">पिज्जा कैलकुलेटर</string>
+    <string name="num_of_pizas">"गेंदों की संख्या "</string>
+    <string name="a_ball_weight">"गेंद का वजन "</string>
+    <string name="action_settings">सेटिंग</string>
+    <string name="dryActive">सक्रिय खमीर</string>
+    <string name="dryInstant">सूखा खमीर</string>
+    <string name="flour">आटा</string>
+    <string name="freshYeast">ताजा खमीर</string>
+    <string name="gram">जी</string>
+    <string name="olive_oil">जैतून का तेल</string>
+    <string name="salt">नमक</string>
+    <string name="sugar">चीनी</string>
+    <string name="title_activity_about">के बारे में</string>
+    <string name="watter">पानी</string>
+</resources>
