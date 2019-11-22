@@ -83,4 +83,15 @@
         app:layout_constraintStart_toEndOf="@+id/ballWeight"
         app:layout_constraintTop_toTopOf="@+id/ballWeight" />
 
+    <TextView
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/recipe_update"
+        app:layout_constraintStart_toStartOf="@+id/ReceiptBtw"
+        app:layout_constraintTop_toBottomOf="@+id/ReceiptBtw" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

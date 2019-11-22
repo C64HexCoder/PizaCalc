@@ -38,7 +38,7 @@ public class SettingsActivity extends AppCompatActivity {
 
 
         // Checks the appropiate RadioBOxes according to PizzaRecipe
-        if (pizzaReciepe.yeastType == PizzaRecipe.YeastType.DryInstent)
+        if (pizzaReciepe.yeastType == PizzaRecipe.YeastType.DryInstant)
             dryInstantYeast.setChecked(true);
         else if (pizzaReciepe.yeastType == PizzaRecipe.YeastType.DryActive)
             dryActiveYeast.setChecked(true);
@@ -69,6 +69,7 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 pizzaReciepe.changeWeightMeasureUnit(PizzaRecipe.UnitOfMeasure.Grams);
+                pizzaReciepe.ex = 0;
                 SavePizzaRecipeToFile();
                 //gramRB.setText(R.string.gram);
                 //recreate();
@@ -79,6 +80,7 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 pizzaReciepe.changeWeightMeasureUnit(PizzaRecipe.UnitOfMeasure.Ounce);
+                pizzaReciepe.ex = 2;
                 SavePizzaRecipeToFile();
                 //gramRB.setText(R.string.ounce);
                 //recreate();
@@ -93,7 +95,7 @@ public class SettingsActivity extends AppCompatActivity {
            @Override
            public void onClick(View v) {
                // and the selected yeastYype is not dry Instant yeast
-               if (pizzaReciepe.yeastType != PizzaRecipe.YeastType.DryInstent) {
+               if (pizzaReciepe.yeastType != PizzaRecipe.YeastType.DryInstant) {
                    // then if the yeastType is dry active yeast
                    if (pizzaReciepe.yeastType == PizzaRecipe.YeastType.DryActive)
                        // converty from dry active yeast to dry instant yeast
@@ -101,7 +103,7 @@ public class SettingsActivity extends AppCompatActivity {
                    else
                        pizzaReciepe.yeastInPercentage /= 3;
 
-                   pizzaReciepe.yeastType = PizzaRecipe.YeastType.DryInstent;
+                   pizzaReciepe.yeastType = PizzaRecipe.YeastType.DryInstant;
                }
            }
        });
@@ -110,7 +112,7 @@ public class SettingsActivity extends AppCompatActivity {
            @Override
            public void onClick(View v) {
                if (pizzaReciepe.yeastType != PizzaRecipe.YeastType.DryActive) {
-                   if (pizzaReciepe.yeastType == PizzaRecipe.YeastType.DryInstent) {
+                   if (pizzaReciepe.yeastType == PizzaRecipe.YeastType.DryInstant) {
                        pizzaReciepe.yeastInPercentage = (pizzaReciepe.yeastInPercentage * 3) / 2;
                    }
                    else
@@ -125,7 +127,7 @@ public class SettingsActivity extends AppCompatActivity {
            @Override
            public void onClick(View v) {
                if (pizzaReciepe.yeastType != PizzaRecipe.YeastType.Fresh) {
-                   if (pizzaReciepe.yeastType == PizzaRecipe.YeastType.DryInstent)
+                   if (pizzaReciepe.yeastType == PizzaRecipe.YeastType.DryInstant)
                         pizzaReciepe.yeastInPercentage *= 3;
                    else
                         pizzaReciepe.yeastInPercentage *=2;

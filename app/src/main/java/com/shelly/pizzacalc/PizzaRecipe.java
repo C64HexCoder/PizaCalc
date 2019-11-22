@@ -6,6 +6,8 @@ import java.math.BigInteger;
 import java.math.RoundingMode;
 
 public class PizzaRecipe implements Serializable {
+
+    //public static final long serialVersionUID = 42L;
     public static PizzaRecipe instance = null;
     public double flourInPercentage = 100;
     public double watterInPercentage = 60;
@@ -17,6 +19,9 @@ public class PizzaRecipe implements Serializable {
 
     public double NumOfBalls = 4;
     public double BallWeight = 250;
+
+    String tmp;
+    public int ex = 0;
 
     private double oliveOilSpecificGravity = 0.97; // grams/cm^2
 
@@ -35,12 +40,12 @@ public class PizzaRecipe implements Serializable {
     public UnitOfMeasure unitOfMesure = UnitOfMeasure.Grams;
 
     enum YeastType{
-        DryInstent,
+        DryInstant,
         DryActive,
         Fresh
     }
 
-    public YeastType yeastType = YeastType.DryInstent;
+    public YeastType yeastType = YeastType.DryInstant;
 
     private double TotalPercentage = flourInPercentage + watterInPercentage + yeastInPercentage + saltInPercentage; //163.06
     private boolean UseSugar = false;
@@ -57,18 +62,10 @@ public class PizzaRecipe implements Serializable {
         Flour = TotalWeight * 100/TotalPercentage;
 
         Yeast = yeastInPercentage/100 * Flour;
+        Watter = calculateWatter();
         Salt = saltInPercentage /100 * Flour;
         Sugar = sugarInPercentage / 100 * Flour;
         calculateOliveOil();
-
-        if (unitOfMesure == UnitOfMeasure.Grams) {
-            Watter = Flour * watterInPercentage / 100;
-        }
-        else {
-            Watter = Flour * watterInPercentage/100 * OneOzInGrams;
-
-        }
-
     }
 
     public static PizzaRecipe getInstance () {
@@ -98,30 +95,32 @@ public class PizzaRecipe implements Serializable {
     }
 
     public String getFlour () {
-        return String.valueOf((int) RoundDouble(0,Flour))+" "+getWeightMeasureSimbole();
+        return String.valueOf(RoundDouble(ex,Flour))+" "+getWeightMeasureSimbole();
     }
 
     public String getWatter () {
-        return String.valueOf((int) RoundDouble(0,Watter))+" "+getLiquidMeassureSimbole();
+        return String.valueOf(RoundDouble(ex,Watter))+" "+getLiquidMeassureSimbole();
+
     }
 
     public String getYeast () {
-        return String.valueOf(RoundDouble(2,Yeast))+" "+getWeightMeasureSimbole();
+        if (unitOfMesure == UnitOfMeasure.Grams)
+            return String.valueOf(RoundDouble(2,Yeast))+" "+getWeightMeasureSimbole();
+        else
+            return String.valueOf(RoundDouble(4,Yeast))+" "+getWeightMeasureSimbole();
     }
 
     public String getSalt () {
-        return String.valueOf((int) RoundDouble(0,Salt))+" "+getWeightMeasureSimbole();
+        return String.valueOf(RoundDouble(ex,Salt))+" "+getWeightMeasureSimbole();
     }
 
     public String getSugar () {
-        if (unitOfMesure == UnitOfMeasure.Grams)
-            return String.valueOf((int) RoundDouble(0,Sugar))+" "+getWeightMeasureSimbole();
-        else
-            return String.valueOf(RoundDouble(2,Sugar))+" "+getWeightMeasureSimbole();
+            return String.valueOf(RoundDouble(ex,Sugar))+" "+getWeightMeasureSimbole();
+
     }
 
     public String getOliveOil () {
-        return String.valueOf((int) RoundDouble(0,OliveOil))+" "+getLiquidMeassureSimbole();
+        return String.valueOf((RoundDouble(ex,OliveOil))+" "+getLiquidMeassureSimbole());
     }
 
     public String getWeightMeasureSimbole() {
@@ -135,8 +134,10 @@ public class PizzaRecipe implements Serializable {
     public String getLiquidMeassureSimbole () {
         if (liquidMeasureUnit == LiquidMeasureUnit.Milliliter)
             return "mil";
-        else
+        else if (unitOfMesure == UnitOfMeasure.Grams)
             return "g";
+        else
+            return "Oz";
     }
 
     public void changeLiquidMeasureUnit (LiquidMeasureUnit liqMeasureUnit) {
@@ -175,6 +176,15 @@ public class PizzaRecipe implements Serializable {
             return ext.getMessage();
         }
     }*/
+
+    private double calculateWatter () {
+        Watter = Flour * watterInPercentage / 100;
+
+        if (unitOfMesure == UnitOfMeasure.Ounce && liquidMeasureUnit == LiquidMeasureUnit.Milliliter)
+            Watter *= OneOzInGrams;
+
+        return Watter;
+    }
 
     private void calculateOliveOil () {
         if (liquidMeasureUnit == LiquidMeasureUnit.Milliliter)

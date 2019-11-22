@@ -32,7 +32,7 @@ public class BakersRecipe extends AppCompatActivity {
         watterET = findViewById(R.id.watterEd), yeastET = findViewById(R.id.yeastEd), saltET = findViewById(R.id.saltEd);
         TextView yeastTV = findViewById(R.id.yestTV);
 
-        if (pizzaReciepe.yeastType == PizzaRecipe.YeastType.DryInstent)
+        if (pizzaReciepe.yeastType == PizzaRecipe.YeastType.DryInstant)
             yeastTV.setText(R.string.dryInstant);
         else if (pizzaReciepe.yeastType == PizzaRecipe.YeastType.DryActive)
             yeastTV.setText(R.string.dryActive);

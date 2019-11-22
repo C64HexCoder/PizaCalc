@@ -41,7 +41,7 @@ public class CalculateRecepie extends AppCompatActivity {
 
         if (pizzaReciepe.yeastType == PizzaRecipe.YeastType.DryActive)
             yeastTV.setText(R.string.dryActive);
-        else if (pizzaReciepe.yeastType == PizzaRecipe.YeastType.DryInstent)
+        else if (pizzaReciepe.yeastType == PizzaRecipe.YeastType.DryInstant)
             yeastTV.setText(R.string.dryInstant);
         else
             yeastTV.setText(R.string.freshYeast);

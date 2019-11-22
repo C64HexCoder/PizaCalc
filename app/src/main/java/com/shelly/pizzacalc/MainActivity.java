@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -45,28 +46,33 @@ public class MainActivity extends AppCompatActivity {
         FloatingActionButton recipe = findViewById(R.id.calculateRecipe);
         ImageButton receiptBan = findViewById(R.id.ReceiptBtw);
 
-
         try {
             FileInputStream FileStream = new FileInputStream(getApplicationInfo().dataDir + "/Receipt.txt");
 
             ObjectInputStream objectInputStream = new ObjectInputStream(FileStream);
             try {
+                String Test = getApplicationInfo().dataDir;
+
                 pizzaReciepe = PizzaRecipe.getInstance((PizzaRecipe) objectInputStream.readObject());
 
             }catch (ClassNotFoundException ext)
             {
                 new AlertDialog.Builder(this).setMessage(ext.getMessage()).create().show();
+                Toast.makeText(getApplicationContext(),"pizzaRecipe not found",Toast.LENGTH_LONG).show();
             }
 
         } catch (FileNotFoundException ext) {
-                pizzaReciepe = PizzaRecipe.getInstance();
+            pizzaReciepe = PizzaRecipe.getInstance();
+            SavePizzaRecipeToFile();
 
         }catch (IOException ex) {
+            pizzaReciepe = PizzaRecipe.getInstance();
+            SavePizzaRecipeToFile();
             new AlertDialog.Builder (this).setTitle("שגיאת קובץ").setMessage(ex.getMessage()).create().show();
         }
 
-        numOfBalls.setText(String.valueOf(pizzaReciepe.NumOfBalls));
-        ballWeight.setText(String.valueOf(pizzaReciepe.BallWeight));
+//        numOfBalls.setText(String.valueOf(pizzaReciepe.NumOfBalls));
+ //       ballWeight.setText(String.valueOf(pizzaReciepe.BallWeight));
 
 
         /*numOfBalls.addTextChangedListener(new TextWatcher() {

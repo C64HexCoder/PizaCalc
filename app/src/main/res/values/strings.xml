@@ -26,4 +26,5 @@
     <string name="ounce">Ounce</string>
     <string name="Liquid_measurring_unit">Liquid measuring unit</string>
     <string name="millilitter">Millilitter</string>
+    <string name="recipe_update">Recipe update</string>
 </resources>
