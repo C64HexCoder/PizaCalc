@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.FileInputStream;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText numOfBalls;
     EditText ballWeight;
+    TextView weightTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         FloatingActionButton recipe = findViewById(R.id.calculateRecipe);
         ImageButton receiptBan = findViewById(R.id.ReceiptBtw);
+
 
         try {
             FileInputStream FileStream = new FileInputStream(getApplicationInfo().dataDir + "/Receipt.txt");
@@ -71,50 +74,8 @@ public class MainActivity extends AppCompatActivity {
             new AlertDialog.Builder (this).setTitle("שגיאת קובץ").setMessage(ex.getMessage()).create().show();
         }
 
-//        numOfBalls.setText(String.valueOf(pizzaReciepe.NumOfBalls));
- //       ballWeight.setText(String.valueOf(pizzaReciepe.BallWeight));
-
-
-        /*numOfBalls.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                pizzaReciepe.NumOfBalls = Double.valueOf(s.toString());
-                SavePizzaRecipeToFile();
-
-                //Toast.makeText(getApplicationContext(),"PizzaRecipe Updated",Toast.LENGTH_LONG).show();
-            }
-        });
-
-        ballWeight.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                pizzaReciepe.BallWeight = Double.valueOf(s.toString());
-                SavePizzaRecipeToFile();
-
-                //Toast.makeText(getApplicationContext(),"PizzaRecipe Updated",Toast.LENGTH_LONG).show();
-            }
-        }); */
-
+        pizzaReciepe.setApplicationContext(getApplicationContext());
+        weightTV = findViewById(R.id.main_weightTV);
 
         recipe.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -187,6 +148,11 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         numOfBalls.setText(String.valueOf(pizzaReciepe.NumOfBalls));
         ballWeight.setText(String.valueOf(pizzaReciepe.BallWeight));
+
+        if (pizzaReciepe.unitOfMesure == PizzaRecipe.UnitOfMeasure.Grams)
+            weightTV.setText(R.string.gram);
+        else
+            weightTV.setText(R.string.ounce);
 
     }
 

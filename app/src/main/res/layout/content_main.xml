@@ -10,8 +10,9 @@
 
     <EditText
         android:id="@+id/numOfBalls"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="48dp"
+        android:layout_marginStart="40dp"
         android:contentDescription="מספר הכדורים/פיצות שרוצים להכין"
         android:ems="10"
         android:hint="מספר הכדורים/פיצות להכנה"
@@ -19,15 +20,13 @@
         android:selectAllOnFocus="true"
         android:text="4"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.7"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.19999999" />
 
     <EditText
         android:id="@+id/ballWeight"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="48dp"
         android:contentDescription="משקל כל כדור"
         android:ems="10"
@@ -35,7 +34,6 @@
         android:selectAllOnFocus="true"
         android:text="250"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/numOfBalls"
         app:layout_constraintStart_toStartOf="@+id/numOfBalls"
         app:layout_constraintTop_toBottomOf="@+id/numOfBalls"
         app:layout_constraintVertical_bias="0.100000024" />
@@ -48,19 +46,17 @@
         android:text="@string/a_ball_weight"
         app:layout_constraintBottom_toBottomOf="@+id/ballWeight"
         app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="@+id/ballWeight"
-        app:layout_constraintVertical_bias="0.538" />
+        app:layout_constraintTop_toTopOf="@+id/ballWeight" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
         android:text="@string/num_of_pizas"
         app:layout_constraintBottom_toBottomOf="@+id/numOfBalls"
-        app:layout_constraintEnd_toStartOf="@+id/numOfBalls"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/numOfBalls"
-        app:layout_constraintVertical_bias="0.45999998" />
+        app:layout_constraintTop_toTopOf="@+id/numOfBalls" />
 
     <ImageButton
         android:id="@+id/ReceiptBtw"
@@ -73,17 +69,6 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/gram"
-        app:layout_constraintBottom_toBottomOf="@+id/ballWeight"
-        app:layout_constraintStart_toEndOf="@+id/ballWeight"
-        app:layout_constraintTop_toTopOf="@+id/ballWeight" />
-
-    <TextView
         android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -93,5 +78,15 @@
         android:text="@string/recipe_update"
         app:layout_constraintStart_toStartOf="@+id/ReceiptBtw"
         app:layout_constraintTop_toBottomOf="@+id/ReceiptBtw" />
+
+    <TextView
+        android:id="@+id/main_weightTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="@string/gram"
+        app:layout_constraintBottom_toBottomOf="@+id/ballWeight"
+        app:layout_constraintStart_toEndOf="@+id/ballWeight"
+        app:layout_constraintTop_toTopOf="@+id/ballWeight" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

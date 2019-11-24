@@ -1,11 +1,13 @@
 package com.shelly.pizzacalc;
 
+import android.content.Context;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
 
-public class PizzaRecipe implements Serializable {
+public class PizzaRecipe  implements Serializable {
 
     //public static final long serialVersionUID = 42L;
     public static PizzaRecipe instance = null;
@@ -20,6 +22,7 @@ public class PizzaRecipe implements Serializable {
     public double NumOfBalls = 4;
     public double BallWeight = 250;
 
+    private static Context applicationContext;
     String tmp;
     public int ex = 0;
 
@@ -76,6 +79,10 @@ public class PizzaRecipe implements Serializable {
         return instance;
     }
 
+    public static void setApplicationContext (Context appContext) {
+        applicationContext = appContext;
+    }
+
     public static PizzaRecipe getInstance(PizzaRecipe pizzaReciepe)
     {
         if (instance == null)
@@ -123,21 +130,22 @@ public class PizzaRecipe implements Serializable {
         return String.valueOf((RoundDouble(ex,OliveOil))+" "+getLiquidMeassureSimbole());
     }
 
+
     public String getWeightMeasureSimbole() {
 
         if (unitOfMesure == UnitOfMeasure.Grams)
-            return "g";
+            return applicationContext.getString(R.string.gram);
         else
-            return "Oz";
+            return applicationContext.getString(R.string.ounce);
     }
 
     public String getLiquidMeassureSimbole () {
         if (liquidMeasureUnit == LiquidMeasureUnit.Milliliter)
-            return "mil";
+            return applicationContext.getString(R.string.millilitter);
         else if (unitOfMesure == UnitOfMeasure.Grams)
-            return "g";
+            return applicationContext.getString(R.string.gram);
         else
-            return "Oz";
+            return applicationContext.getString(R.string.ounce);
     }
 
     public void changeLiquidMeasureUnit (LiquidMeasureUnit liqMeasureUnit) {

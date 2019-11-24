@@ -27,4 +27,7 @@
     <string name="Liquid_measurring_unit">Liquid measuring unit</string>
     <string name="millilitter">Millilitter</string>
     <string name="recipe_update">Recipe update</string>
+    <string name="gram_simbol">g</string>
+    <string name="ounces_simbol">Oz</string>
+    <string name="mililliter">mil</string>
 </resources>

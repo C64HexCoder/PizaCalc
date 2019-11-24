@@ -22,4 +22,7 @@
     <string name="Liquid_measurring_unit">יחדת מידה לנוזלים</string>
     <string name="millilitter">מיליליטר</string>
     <string name="recipe_update">עדכון מתכון</string>
+    <string name="gram_simbol">ג\'</string>
+    <string name="ounces_simbol">אונ\'</string>
+    <string name="mililliter">מיל</string>
 </resources>
