@@ -97,6 +97,7 @@
         android:layout_height="wrap_content"
         android:paddingRight="6dp"
         android:text="@string/flour"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/flourEd"
         app:layout_constraintEnd_toStartOf="@+id/flourEd"
         app:layout_constraintHorizontal_bias="0.2"
@@ -109,6 +110,7 @@
         android:layout_height="wrap_content"
         android:paddingRight="6dp"
         android:text="@string/watter"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/watterEd"
         app:layout_constraintStart_toStartOf="@+id/textView7"
         app:layout_constraintTop_toTopOf="@+id/watterEd" />
@@ -119,6 +121,7 @@
         android:layout_height="wrap_content"
         android:paddingRight="6dp"
         android:text="@string/dryInstant"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/yeastEd"
         app:layout_constraintStart_toStartOf="@+id/textView8"
         app:layout_constraintTop_toTopOf="@+id/yeastEd" />
@@ -129,6 +132,8 @@
         android:layout_height="wrap_content"
         android:paddingRight="6dp"
         android:text="@string/salt"
+        android:textAlignment="viewStart"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/saltEd"
         app:layout_constraintStart_toStartOf="@+id/yestTV"
         app:layout_constraintTop_toTopOf="@+id/saltEd" />
@@ -140,6 +145,7 @@
         android:layout_height="48dp"
         android:gravity="center"
         android:text="@string/sugar"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/sugarEd"
         app:layout_constraintStart_toStartOf="@+id/textView10"
         app:layout_constraintTop_toTopOf="@+id/sugarEd" />
@@ -149,6 +155,7 @@
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:text="@string/olive_oil"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/oliveOilEd"
         app:layout_constraintStart_toStartOf="@+id/sugarCB"
         app:layout_constraintTop_toTopOf="@+id/oliveOilEd" />

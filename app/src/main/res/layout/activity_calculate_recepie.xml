@@ -40,6 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/flour"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/flourEd"
         app:layout_constraintStart_toStartOf="@+id/textView4"
         app:layout_constraintTop_toTopOf="@+id/flourEd" />
@@ -65,6 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/dryInstant"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/yeastED"
         app:layout_constraintStart_toStartOf="@+id/textView6"
         app:layout_constraintTop_toTopOf="@+id/yeastED" />
@@ -74,6 +76,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/salt"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/saltED"
         app:layout_constraintStart_toStartOf="@+id/sugarTV"
         app:layout_constraintTop_toTopOf="@+id/saltED"
@@ -84,6 +87,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/watter"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/watterEd"
         app:layout_constraintStart_toStartOf="@+id/calc_recipt_yeastTV"
         app:layout_constraintTop_toTopOf="@+id/watterEd" />
@@ -136,6 +140,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/sugar"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/sugarED"
         app:layout_constraintStart_toStartOf="@+id/oliveOilTV"
         app:layout_constraintTop_toTopOf="@+id/sugarED" />
@@ -145,6 +150,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/olive_oil"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/oliveOilED"
         app:layout_constraintEnd_toStartOf="@+id/oliveOilED"
         app:layout_constraintHorizontal_bias="0.36"
