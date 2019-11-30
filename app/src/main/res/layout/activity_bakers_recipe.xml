@@ -44,9 +44,9 @@
         android:inputType="numberDecimal"
         android:selectAllOnFocus="true"
         android:text="0.06"
-        app:layout_constraintEnd_toEndOf="@+id/watterEd"
-        app:layout_constraintStart_toStartOf="@+id/watterEd"
-        app:layout_constraintTop_toBottomOf="@+id/watterEd" />
+        app:layout_constraintEnd_toEndOf="@+id/watterSeekBar"
+        app:layout_constraintStart_toStartOf="@+id/watterSeekBar"
+        app:layout_constraintTop_toBottomOf="@+id/watterSeekBar" />
 
     <EditText
         android:id="@+id/saltEd"
@@ -111,7 +111,7 @@
         android:paddingRight="6dp"
         android:text="@string/watter"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/watterEd"
+        app:layout_constraintBottom_toBottomOf="@+id/watterSeekBar"
         app:layout_constraintStart_toStartOf="@+id/textView7"
         app:layout_constraintTop_toTopOf="@+id/watterEd" />
 
@@ -183,5 +183,20 @@
         android:src="@mipmap/update"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <SeekBar
+        android:id="@+id/watterSeekBar"
+        style="@android:style/Widget.SeekBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:max="15"
+        android:paddingStart="10dip"
+        android:paddingEnd="10dip"
+        android:progress="10"
+        android:soundEffectsEnabled="true"
+        app:layout_constraintEnd_toEndOf="@+id/watterEd"
+        app:layout_constraintStart_toStartOf="@+id/watterEd"
+        app:layout_constraintTop_toBottomOf="@+id/watterEd" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
