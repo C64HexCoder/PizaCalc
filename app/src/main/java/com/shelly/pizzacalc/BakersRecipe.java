@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.CheckBox;
@@ -21,7 +23,8 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 
 public class BakersRecipe extends AppCompatActivity {
-
+    SeekBar watterSeekBar;
+    EditText watterET;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,9 +36,11 @@ public class BakersRecipe extends AppCompatActivity {
         FloatingActionButton button = findViewById(R.id.updateFloatingButton);
         final CheckBox sugarCB = findViewById(R.id.sugarCB), oliveOilCB = findViewById(R.id.oliveOilCB);
         final EditText sugarET = findViewById(R.id.sugarEd), olivOildET = findViewById(R.id.oliveOilEd), flourET = findViewById(R.id.flourEd),
-        watterET = findViewById(R.id.watterEd), yeastET = findViewById(R.id.yeastEd), saltET = findViewById(R.id.saltEd);
+                yeastET = findViewById(R.id.yeastEd), saltET = findViewById(R.id.saltEd);
+
+        watterET = findViewById(R.id.watterEd);
         TextView yeastTV = findViewById(R.id.yestTV);
-        final SeekBar watterSeekBar = findViewById(R.id.watterSeekBar);
+        watterSeekBar = findViewById(R.id.watterSeekBar);
 
         if (pizzaReciepe.yeastType == PizzaRecipe.YeastType.DryInstant)
             yeastTV.setText(R.string.dryInstant);
@@ -72,13 +77,27 @@ public class BakersRecipe extends AppCompatActivity {
             sugarET.setEnabled(false);
         }
 
+        
 
-        watterET.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+        watterET.addTextChangedListener(new TextWatcher() {
             @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus == false) {
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (s.length() == 2) {
                     //Toast.makeText(getApplicationContext(),"Out of focus "+watterET.getText().toString(),Toast.LENGTH_LONG).show();
-                    watterSeekBar.setProgress(Integer.valueOf(watterET.getText().toString())-55);
+                    if (Integer.valueOf(watterET.getText().toString()) > 70 || Integer.valueOf(watterET.getText().toString()) < 55) {
+                        new AlertDialog.Builder(BakersRecipe.this).setMessage("Watter percentage must be between 55% to 70%").create().show();
+                    }
+                    watterSeekBar.setProgress(Integer.valueOf(watterET.getText().toString()) - 55);
                 }
             }
         });
@@ -152,5 +171,12 @@ public class BakersRecipe extends AppCompatActivity {
                     olivOildET.setEnabled(false);
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+
     }
 }
