@@ -3,7 +3,7 @@
     <string name="action_settings">Settings</string>
     <string name="num_of_pizas">Number of Balls</string>
     <string name="flour">Flour</string>
-    <string name="watter">Watter</string>
+    <string name="water">Water</string>
     <string name="dryInstant">Yeast</string>
     <string name="olive_oil">Olive Oil</string>
     <string name="salt">Salt</string>
@@ -30,4 +30,5 @@
     <string name="gram_simbol">g</string>
     <string name="ounces_simbol">Oz</string>
     <string name="mililliter">mil</string>
+    <string name="water_range_error">Water percentage must be between 55% to 70%</string>
 </resources>

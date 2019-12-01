@@ -8,5 +8,6 @@
     <string name="olive_oil">Оливковое масло</string>
     <string name="salt">соль</string>
     <string name="sugar">сахар</string>
-    <string name="watter">воды</string>
+    <string name="water">воды</string>
+    <string name="water_range_error">Процентное содержание воды должно составлять от 55% до 70%.</string>
 </resources>

@@ -109,7 +109,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingRight="6dp"
-        android:text="@string/watter"
+        android:text="@string/water"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/watterSeekBar"
         app:layout_constraintStart_toStartOf="@+id/textView7"
@@ -195,6 +195,7 @@
         android:paddingEnd="10dip"
         android:progress="10"
         android:soundEffectsEnabled="true"
+        android:thumb="@mipmap/pizza"
         app:layout_constraintEnd_toEndOf="@+id/watterEd"
         app:layout_constraintStart_toStartOf="@+id/watterEd"
         app:layout_constraintTop_toBottomOf="@+id/watterEd" />

@@ -4,7 +4,7 @@
     <string name="action_settings">הגדרות</string>
     <string name="num_of_pizas">מספר כדורים</string>
     <string name="flour">קמח</string>
-    <string name="watter">מים</string>
+    <string name="water">מים</string>
     <string name="dryInstant">שמרים אינסטנט</string>
     <string name="olive_oil">שמן זית</string>
     <string name="salt">מלח</string>
@@ -25,4 +25,5 @@
     <string name="gram_simbol">ג\'</string>
     <string name="ounces_simbol">אונ\'</string>
     <string name="mililliter">מיל</string>
+    <string name="water_range_error">אחוזי המים צריכים להיות בין 55% ל 70%</string>
 </resources>

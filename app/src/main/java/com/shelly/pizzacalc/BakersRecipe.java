@@ -7,14 +7,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -95,7 +93,7 @@ public class BakersRecipe extends AppCompatActivity {
                 if (s.length() == 2) {
                     //Toast.makeText(getApplicationContext(),"Out of focus "+watterET.getText().toString(),Toast.LENGTH_LONG).show();
                     if (Integer.valueOf(watterET.getText().toString()) > 70 || Integer.valueOf(watterET.getText().toString()) < 55) {
-                        new AlertDialog.Builder(BakersRecipe.this).setMessage("Watter percentage must be between 55% to 70%").create().show();
+                        new AlertDialog.Builder(BakersRecipe.this).setMessage(R.string.water_range_error).create().show();
                     }
                     watterSeekBar.setProgress(Integer.valueOf(watterET.getText().toString()) - 55);
                 }

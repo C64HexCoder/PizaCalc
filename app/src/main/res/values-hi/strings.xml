@@ -13,5 +13,6 @@
     <string name="salt">नमक</string>
     <string name="sugar">चीनी</string>
     <string name="title_activity_about">के बारे में</string>
-    <string name="watter">पानी</string>
+    <string name="water">पानी</string>
+    <string name="water_range_error">पानी का प्रतिशत 55% से 70% के बीच होना चाहिए</string>
 </resources>
