@@ -37,20 +37,19 @@
 
     <EditText
         android:id="@+id/yeastEd"
-        android:layout_width="wrap_content"
+        android:layout_width="49dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="numberDecimal"
         android:selectAllOnFocus="true"
         android:text="0.06"
-        app:layout_constraintEnd_toEndOf="@+id/watterSeekBar"
         app:layout_constraintStart_toStartOf="@+id/watterSeekBar"
         app:layout_constraintTop_toBottomOf="@+id/watterSeekBar" />
 
     <EditText
         android:id="@+id/saltEd"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
@@ -63,7 +62,7 @@
 
     <EditText
         android:id="@+id/sugarEd"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
@@ -78,7 +77,7 @@
 
     <EditText
         android:id="@+id/oliveOilEd"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
@@ -198,5 +197,42 @@
         app:layout_constraintEnd_toEndOf="@+id/watterEd"
         app:layout_constraintStart_toStartOf="@+id/watterEd"
         app:layout_constraintTop_toBottomOf="@+id/watterEd" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/yeastEd"
+        app:layout_constraintEnd_toEndOf="@+id/watterSeekBar"
+        app:layout_constraintStart_toEndOf="@+id/yeastEd"
+        app:layout_constraintTop_toTopOf="@+id/yeastEd" />
+
+    <SeekBar
+        android:id="@+id/seekBar3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/saltEd"
+        app:layout_constraintEnd_toEndOf="@+id/seekBar"
+        app:layout_constraintStart_toStartOf="@+id/seekBar"
+        app:layout_constraintTop_toTopOf="@+id/saltEd" />
+
+    <SeekBar
+        android:id="@+id/seekBar4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/sugarEd"
+        app:layout_constraintEnd_toEndOf="@+id/seekBar3"
+        app:layout_constraintStart_toStartOf="@+id/seekBar3"
+        app:layout_constraintTop_toTopOf="@+id/sugarEd" />
+
+    <SeekBar
+        android:id="@+id/seekBar5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/oliveOilEd"
+        app:layout_constraintEnd_toEndOf="@+id/seekBar4"
+        app:layout_constraintStart_toStartOf="@+id/seekBar4"
+        app:layout_constraintTop_toTopOf="@+id/oliveOilEd" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
