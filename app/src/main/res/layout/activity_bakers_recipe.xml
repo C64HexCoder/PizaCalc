@@ -24,28 +24,28 @@
 
     <EditText
         android:id="@+id/watterEd"
-        android:layout_width="wrap_content"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="numberDecimal"
         android:selectAllOnFocus="true"
         android:text="60"
-        app:layout_constraintEnd_toEndOf="@+id/flourEd"
         app:layout_constraintStart_toStartOf="@+id/flourEd"
         app:layout_constraintTop_toBottomOf="@+id/flourEd" />
 
     <EditText
         android:id="@+id/yeastEd"
-        android:layout_width="49dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="numberDecimal"
         android:selectAllOnFocus="true"
         android:text="0.06"
-        app:layout_constraintStart_toStartOf="@+id/watterSeekBar"
-        app:layout_constraintTop_toBottomOf="@+id/watterSeekBar" />
+        app:layout_constraintEnd_toEndOf="@+id/watterEd"
+        app:layout_constraintStart_toStartOf="@+id/watterEd"
+        app:layout_constraintTop_toBottomOf="@+id/watterEd" />
 
     <EditText
         android:id="@+id/saltEd"
@@ -188,15 +188,16 @@
         style="@android:style/Widget.SeekBar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginStart="10dp"
         android:max="15"
         android:paddingStart="10dip"
         android:paddingEnd="10dip"
         android:progress="10"
         android:soundEffectsEnabled="true"
-        app:layout_constraintEnd_toEndOf="@+id/watterEd"
-        app:layout_constraintStart_toStartOf="@+id/watterEd"
-        app:layout_constraintTop_toBottomOf="@+id/watterEd" />
+        app:layout_constraintBottom_toBottomOf="@+id/watterEd"
+        app:layout_constraintEnd_toEndOf="@+id/flourEd"
+        app:layout_constraintStart_toEndOf="@+id/watterEd"
+        app:layout_constraintTop_toTopOf="@+id/watterEd" />
 
     <SeekBar
         android:id="@+id/seekBar"
