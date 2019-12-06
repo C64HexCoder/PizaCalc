@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.action_about:
-                Intent intent1 = new Intent(this,AboutActivity.class);
+                Intent intent1 = new Intent(this,About.class);
                 startActivity(intent1);
                 break;
 
