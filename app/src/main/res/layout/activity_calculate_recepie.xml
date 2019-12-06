@@ -54,7 +54,7 @@
         android:id="@+id/flourEd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="110dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="40dp"
         android:clickable="false"
         android:editable="false"
@@ -64,7 +64,7 @@
         android:textColor="@color/design_default_color_primary"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintStart_toEndOf="@+id/calc_recipt_yeastTV"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
