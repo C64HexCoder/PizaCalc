@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".CalculateRecepie">
 
-    <EditText
+    <TextView
         android:id="@+id/oliveOilED"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,13 +16,13 @@
         android:enabled="false"
         android:inputType="numberSigned"
         android:textColor="@color/design_default_color_primary"
+        android:textSize="18sp"
+        android:textStyle="bold"
         android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.75"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/sugarED"
         app:layout_constraintTop_toBottomOf="@+id/sugarED" />
 
-    <EditText
+    <TextView
         android:id="@+id/sugarED"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,23 +32,29 @@
         android:enabled="false"
         android:inputType="numberSigned"
         android:textColor="@color/design_default_color_primary"
-        app:layout_constraintEnd_toEndOf="@+id/oliveOilED"
-        app:layout_constraintStart_toStartOf="@+id/oliveOilED"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/saltED"
         app:layout_constraintTop_toBottomOf="@+id/saltED" />
 
     <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
         android:text="@string/flour"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/flourEd"
-        app:layout_constraintStart_toStartOf="@+id/textView4"
-        app:layout_constraintTop_toTopOf="@+id/flourEd" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/flourEd"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <EditText
+    <TextView
         android:id="@+id/flourEd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="110dp"
         android:layout_marginTop="40dp"
         android:clickable="false"
         android:editable="false"
@@ -56,9 +62,9 @@
         android:enabled="false"
         android:inputType="numberDecimal"
         android:textColor="@color/design_default_color_primary"
-        app:layout_constraintEnd_toEndOf="@+id/watterEd"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/watterEd"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -66,9 +72,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/dryInstant"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/yeastED"
-        app:layout_constraintStart_toStartOf="@+id/textView6"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
         app:layout_constraintTop_toTopOf="@+id/yeastED" />
 
     <TextView
@@ -76,9 +83,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/salt"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/saltED"
-        app:layout_constraintStart_toStartOf="@+id/sugarTV"
+        app:layout_constraintStart_toStartOf="@+id/calc_recipt_yeastTV"
         app:layout_constraintTop_toTopOf="@+id/saltED"
         app:layout_constraintVertical_bias="0.384" />
 
@@ -87,12 +95,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/water"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/watterEd"
-        app:layout_constraintStart_toStartOf="@+id/calc_recipt_yeastTV"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
         app:layout_constraintTop_toTopOf="@+id/watterEd" />
 
-    <EditText
+    <TextView
         android:id="@+id/watterEd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -101,12 +110,12 @@
         android:enabled="false"
         android:inputType="numberDecimal"
         android:textColor="@color/design_default_color_primary"
-        app:layout_constraintEnd_toEndOf="@+id/yeastED"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/yeastED"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/flourEd"
         app:layout_constraintTop_toBottomOf="@+id/flourEd" />
 
-    <EditText
+    <TextView
         android:id="@+id/yeastED"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -116,12 +125,12 @@
         android:enabled="false"
         android:inputType="numberSigned"
         android:textColor="@color/design_default_color_primary"
-        app:layout_constraintEnd_toEndOf="@+id/saltED"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/saltED"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/watterEd"
         app:layout_constraintTop_toBottomOf="@+id/watterEd" />
 
-    <EditText
+    <TextView
         android:id="@+id/saltED"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -131,8 +140,9 @@
         android:enabled="false"
         android:inputType="numberSigned"
         android:textColor="@color/design_default_color_primary"
-        app:layout_constraintEnd_toEndOf="@+id/sugarED"
-        app:layout_constraintStart_toStartOf="@+id/sugarED"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/yeastED"
         app:layout_constraintTop_toBottomOf="@+id/yeastED" />
 
     <TextView
@@ -140,9 +150,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/sugar"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/sugarED"
-        app:layout_constraintStart_toStartOf="@+id/oliveOilTV"
+        app:layout_constraintStart_toStartOf="@+id/textView6"
         app:layout_constraintTop_toTopOf="@+id/sugarED" />
 
     <TextView
@@ -150,11 +161,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/olive_oil"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/oliveOilED"
-        app:layout_constraintEnd_toStartOf="@+id/oliveOilED"
-        app:layout_constraintHorizontal_bias="0.36"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/sugarTV"
         app:layout_constraintTop_toTopOf="@+id/oliveOilED" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

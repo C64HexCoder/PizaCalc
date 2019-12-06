@@ -16,12 +16,12 @@ public class CalculateRecepie extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculate_recepie);
 
-        EditText flour = findViewById(R.id.flourEd);
-        EditText watter = findViewById(R.id.watterEd);
-        EditText yeast = findViewById(R.id.yeastED);
-        EditText salt = findViewById(R.id.saltED);
-        EditText sugar = findViewById(R.id.sugarED);
-        EditText oliveOil = findViewById(R.id.oliveOilED);
+        TextView flour = findViewById(R.id.flourEd);
+        TextView watter = findViewById(R.id.watterEd);
+        TextView yeast = findViewById(R.id.yeastED);
+        TextView salt = findViewById(R.id.saltED);
+        TextView sugar = findViewById(R.id.sugarED);
+        TextView oliveOil = findViewById(R.id.oliveOilED);
         TextView sugarTV = findViewById(R.id.sugarTV);
         TextView oliveOilTV = findViewById(R.id.oliveOilTV);
         TextView yeastTV = findViewById(R.id.calc_recipt_yeastTV);
