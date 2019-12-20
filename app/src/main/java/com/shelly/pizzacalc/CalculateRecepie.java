@@ -2,10 +2,13 @@ package com.shelly.pizzacalc;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
 public class CalculateRecepie extends AppCompatActivity {
@@ -25,6 +28,7 @@ public class CalculateRecepie extends AppCompatActivity {
         TextView sugarTV = findViewById(R.id.sugarTV);
         TextView oliveOilTV = findViewById(R.id.oliveOilTV);
         TextView yeastTV = findViewById(R.id.calc_recipt_yeastTV);
+        FloatingActionButton backFloatingButton = findViewById(R.id.backFloatingButton);
 
         double TotalWeight;
         TotalWeight = getIntent().getDoubleExtra("Total Weight",250);
@@ -63,5 +67,15 @@ public class CalculateRecepie extends AppCompatActivity {
             oliveOil.setVisibility(View.INVISIBLE);
             oliveOilTV.setVisibility(View.INVISIBLE);
         }
+
+        backFloatingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent mainIntent = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(mainIntent);
+                finish();
+            }
+        });
+
     }
 }

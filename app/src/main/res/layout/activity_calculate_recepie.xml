@@ -167,4 +167,16 @@
         app:layout_constraintStart_toStartOf="@+id/sugarTV"
         app:layout_constraintTop_toTopOf="@+id/oliveOilED" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/backFloatingButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        app:backgroundTint="#FAAA00"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@mipmap/back" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

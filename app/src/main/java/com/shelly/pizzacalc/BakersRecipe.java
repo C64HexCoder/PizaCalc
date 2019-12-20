@@ -3,6 +3,7 @@ package com.shelly.pizzacalc;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -21,6 +22,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.math.BigDecimal;
+import java.math.MathContext;
 import java.math.RoundingMode;
 
 public class BakersRecipe extends AppCompatActivity {
@@ -34,7 +36,7 @@ public class BakersRecipe extends AppCompatActivity {
         final PizzaRecipe pizzaReciepe = PizzaRecipe.getInstance();
 
         // Initiolize the Views
-        FloatingActionButton button = findViewById(R.id.updateFloatingButton);
+        FloatingActionButton updateButton = findViewById(R.id.updateFloatingButton);
         final CheckBox sugarCB = findViewById(R.id.sugarCB), oliveOilCB = findViewById(R.id.oliveOilCB);
         final EditText sugarET = findViewById(R.id.sugarEd), olivOildET = findViewById(R.id.oliveOilEd), /*flourET = findViewById(R.id.flourEd),*/
                 yeastET = findViewById(R.id.yeastEd), saltET = findViewById(R.id.saltEd);
@@ -56,13 +58,13 @@ public class BakersRecipe extends AppCompatActivity {
         watterET.setText(String.valueOf(pizzaReciepe.watterInPercentage));
         watterSeekBar.setProgress((int) pizzaReciepe.watterInPercentage - 55);
         yeastET.setText(String.valueOf(pizzaReciepe.yeastInPercentage));
-        yeastSeekBar.setProgress((int)pizzaReciepe.yeastInPercentage);
+        yeastSeekBar.setProgress(yeastSeekBarPos(pizzaReciepe.yeastInPercentage));
         saltET.setText(String.valueOf(pizzaReciepe.saltInPercentage));
-        saltSeekBar.setProgress((int)pizzaReciepe.saltInPercentage);
+        saltSeekBar.setProgress(saltSeekBarPos(pizzaReciepe.saltInPercentage));
         sugarET.setText(String.valueOf(pizzaReciepe.sugarInPercentage));
-        sugarSeekBar.setProgress((int)pizzaReciepe.sugarInPercentage);
+        sugarSeekBar.setProgress(sugarSeekBarPos(pizzaReciepe.sugarInPercentage));
         olivOildET.setText(String.valueOf(pizzaReciepe.oliveOilInPercentage));
-        oliveOilSeekBar.setProgress((int)pizzaReciepe.oliveOilInPercentage);
+        oliveOilSeekBar.setProgress(oliveOildSeekBarPos(pizzaReciepe.oliveOilInPercentage));
 
         sugarCB.setChecked(pizzaReciepe.UseSuger());
         oliveOilCB.setChecked(pizzaReciepe.UseOliveOil());
@@ -121,28 +123,28 @@ public class BakersRecipe extends AppCompatActivity {
                 switch (view.getId()) {
                     case R.id.yeastEd:
                         if (b == false) {
-                            newPosition = (int) ((Double.valueOf(yeastET.getText().toString()) - 0.01) * 100);
+                            newPosition = yeastSeekBarPos(Double.valueOf(yeastET.getText().toString()));
                             yeastSeekBar.setProgress(newPosition);
                         }
                         break;
 
                     case R.id.saltEd:
                         if (b == false) {
-                            newPosition = (int) ((Double.valueOf(saltET.getText().toString())- 2)/0.05);
+                            newPosition = saltSeekBarPos(Double.valueOf(saltET.getText().toString()));
                             saltSeekBar.setProgress(newPosition);
                         }
                         break;
 
                     case R.id.sugarEd:
                         if (b == false) {
-                            newPosition = (int) (((Double.valueOf(sugarET.getText().toString()))-1)/0.05);
+                            newPosition = sugarSeekBarPos(Double.valueOf(sugarET.getText().toString()));
                             sugarSeekBar.setProgress(newPosition);
                         }
                         break;
 
                     case R.id.oliveOilEd:
                         if (b == false) {
-                            newPosition = (int) (((Double.valueOf(olivOildET.getText().toString()))-1)/0.5);
+                            newPosition = oliveOildSeekBarPos(Double.valueOf(olivOildET.getText().toString()));
                             oliveOilSeekBar.setProgress(newPosition);
                         }
 
@@ -183,6 +185,7 @@ public class BakersRecipe extends AppCompatActivity {
 
             }
 
+
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
 
@@ -202,7 +205,7 @@ public class BakersRecipe extends AppCompatActivity {
 
 
 
-        button.setOnClickListener(new View.OnClickListener() {
+        updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 pizzaReciepe.watterInPercentage = Double.valueOf(watterET.getText().toString());
@@ -227,9 +230,15 @@ public class BakersRecipe extends AppCompatActivity {
                     new AlertDialog.Builder (BakersRecipe.this).setTitle("File Error").setMessage(ext.getMessage()).create().show();
                 }
 
-                Intent intent = new Intent(getBaseContext(),MainActivity.class);
-                startActivity(intent);
-                finish();
+                new AlertDialog.Builder(BakersRecipe.this).setMessage(R.string.recipe_update_dialog_message).setTitle(R.string.recipe_update_dialog_title).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Intent intent = new Intent(getBaseContext(),MainActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                }).setIcon(R.mipmap.save).setCancelable(false).create().show();
+
             }
         });
 
@@ -261,8 +270,30 @@ public class BakersRecipe extends AppCompatActivity {
                 }
             }
         });
+
+
+
     }
 
+    private int yeastSeekBarPos (double yeastPercentage)
+    {
+        return new BigDecimal((yeastPercentage - 0.01) * 100).round(MathContext.DECIMAL64).intValue();
+    }
+
+    private int saltSeekBarPos (double saltPercentage)
+    {
+        return new BigDecimal((saltPercentage- 2)/0.05).round(MathContext.DECIMAL64).intValue();
+    }
+
+    private int sugarSeekBarPos (double sugarPercentage)
+    {
+        return new BigDecimal((sugarPercentage-1)/0.05).round(MathContext.DECIMAL64).intValue();
+    }
+
+    private int oliveOildSeekBarPos (double oliveOilPercentage)
+    {
+        return new BigDecimal((oliveOilPercentage-1)/0.5).round(MathContext.DECIMAL64).intValue();
+    }
     @Override
     public void onBackPressed() {
         super.onBackPressed();

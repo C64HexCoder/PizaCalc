@@ -60,8 +60,8 @@ public class MainActivity extends AppCompatActivity {
 
             }catch (ClassNotFoundException ext)
             {
-                new AlertDialog.Builder(this).setMessage(ext.getMessage()).create().show();
-                Toast.makeText(getApplicationContext(),"pizzaRecipe not found",Toast.LENGTH_LONG).show();
+                //new AlertDialog.Builder(this).setMessage(ext.getMessage()).create().show();
+                //Toast.makeText(getApplicationContext(),"pizzaRecipe not found",Toast.LENGTH_LONG).show();
             }
 
         } catch (FileNotFoundException ext) {
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         }catch (IOException ex) {
             pizzaReciepe = PizzaRecipe.getInstance();
             SavePizzaRecipeToFile();
-            new AlertDialog.Builder (this).setTitle("שגיאת קובץ").setMessage(ex.getMessage()).create().show();
+            //new AlertDialog.Builder (this).setTitle("שגיאת קובץ").setMessage(ex.getMessage()).create().show();
         }
 
         pizzaReciepe.setApplicationContext(getApplicationContext());

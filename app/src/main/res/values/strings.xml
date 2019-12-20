@@ -31,4 +31,6 @@
     <string name="ounces_simbol">Oz</string>
     <string name="mililliter">mil</string>
     <string name="water_range_error">Water percentage must be between 55% to 70%</string>
+    <string name="recipe_update_dialog_title">Updating Recipe</string>
+    <string name="recipe_update_dialog_message">The recipe succsessfully updated.</string>
 </resources>

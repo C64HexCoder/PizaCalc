@@ -22,6 +22,13 @@ public class PizzaRecipe  implements Serializable {
     public double NumOfBalls = 4;
     public double BallWeight = 250;
 
+    public enum WeightRounding {
+        Round,
+        NotRound
+    }
+
+    public WeightRounding weightRounding = WeightRounding.Round.Round;
+
     private static Context applicationContext;
     String tmp;
     public int ex = 0;
@@ -102,36 +109,36 @@ public class PizzaRecipe  implements Serializable {
     }
 
     public String getFlour () {
-        return String.valueOf(RoundDouble(ex,Flour))+" "+getWeightMeasureSimbole();
+        return String.valueOf(RoundDouble(weightRounding.ordinal(),Flour))+" "+ getWeightMeasureSymbol();
     }
 
     public String getWatter () {
-        return String.valueOf(RoundDouble(ex,Watter))+" "+getLiquidMeassureSimbole();
+        return String.valueOf(RoundDouble(weightRounding.ordinal(),Watter))+" "+ getLiquidMeasuresSymbol();
 
     }
 
     public String getYeast () {
         if (unitOfMesure == UnitOfMeasure.Grams)
-            return String.valueOf(RoundDouble(2,Yeast))+" "+getWeightMeasureSimbole();
+            return String.valueOf(RoundDouble(2,Yeast))+" "+ getWeightMeasureSymbol();
         else
-            return String.valueOf(RoundDouble(4,Yeast))+" "+getWeightMeasureSimbole();
+            return String.valueOf(RoundDouble(4,Yeast))+" "+ getWeightMeasureSymbol();
     }
 
     public String getSalt () {
-        return String.valueOf(RoundDouble(ex,Salt))+" "+getWeightMeasureSimbole();
+        return String.valueOf(RoundDouble(weightRounding.ordinal(),Salt))+" "+ getWeightMeasureSymbol();
     }
 
     public String getSugar () {
-            return String.valueOf(RoundDouble(ex,Sugar))+" "+getWeightMeasureSimbole();
+            return String.valueOf(RoundDouble(weightRounding.ordinal(),Sugar))+" "+ getWeightMeasureSymbol();
 
     }
 
     public String getOliveOil () {
-        return String.valueOf((RoundDouble(ex,OliveOil))+" "+getLiquidMeassureSimbole());
+        return String.valueOf((RoundDouble(weightRounding.ordinal(),OliveOil))+" "+ getLiquidMeasuresSymbol());
     }
 
 
-    public String getWeightMeasureSimbole() {
+    public String getWeightMeasureSymbol() {
 
         if (unitOfMesure == UnitOfMeasure.Grams)
             return applicationContext.getString(R.string.gram);
@@ -139,7 +146,7 @@ public class PizzaRecipe  implements Serializable {
             return applicationContext.getString(R.string.ounce);
     }
 
-    public String getLiquidMeassureSimbole () {
+    public String getLiquidMeasuresSymbol() {
         if (liquidMeasureUnit == LiquidMeasureUnit.Milliliter)
             return applicationContext.getString(R.string.millilitter);
         else if (unitOfMesure == UnitOfMeasure.Grams)
@@ -166,7 +173,7 @@ public class PizzaRecipe  implements Serializable {
     }
 
     public String getBallWeight () {
-        return String.valueOf(RoundDouble(2,BallWeight))+" "+getWeightMeasureSimbole();
+        return String.valueOf(RoundDouble(2,BallWeight))+" "+ getWeightMeasureSymbol();
     }
 
     /*public static String savePizzaReciep (String dataDir)

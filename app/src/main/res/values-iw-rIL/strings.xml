@@ -26,4 +26,6 @@
     <string name="ounces_simbol">אונ\'</string>
     <string name="mililliter">מיל</string>
     <string name="water_range_error">אחוזי המים צריכים להיות בין 55% ל 70%</string>
+    <string name="recipe_update_dialog_title">מעדכן מתכון</string>
+    <string name="recipe_update_dialog_message">המתכון עודכן בהצלחה.</string>
 </resources>
