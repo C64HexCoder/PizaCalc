@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/pizza_slice_background"
     android:focusableInTouchMode="true"
     tools:context=".BakersRecipe">
 
@@ -16,7 +17,6 @@
         android:editable="false"
         android:ems="10"
         android:enabled="false"
-        android:inputType="numberDecimal"
         android:text="100"
         android:textColor="#F44336"
         android:textSize="24sp"

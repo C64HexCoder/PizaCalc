@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/pizza_slice_background"
     tools:context=".SettingsActivity">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -34,19 +35,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="@string/settings_instant_dry_yeast" />
+            android:text="@string/settings_instant_dry_yeast"
+            android:textColor="#9C27B0"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <RadioButton
             android:id="@+id/dryActiveYeastRB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/settings_active_dry_yeast" />
+            android:text="@string/settings_active_dry_yeast"
+            android:textColor="#9C27B0"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <RadioButton
             android:id="@+id/freshYeastRB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/freshYeast" />
+            android:text="@string/freshYeast"
+            android:textColor="#9C27B0"
+            android:textSize="18sp"
+            android:textStyle="bold" />
     </RadioGroup>
 
     <TextView
@@ -54,6 +64,9 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:text="@string/settings_yeast"
+        android:textColor="#9C27B0"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/yeastRG"
         app:layout_constraintStart_toStartOf="@+id/yeastRG" />
 
@@ -70,13 +83,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="@string/gram" />
+            android:text="@string/gram"
+            android:textColor="#9C27B0"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <RadioButton
             android:id="@+id/ounceRB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/ounce" />
+            android:text="@string/ounce"
+            android:textColor="#9C27B0"
+            android:textSize="18sp"
+            android:textStyle="bold" />
     </RadioGroup>
 
     <TextView
@@ -84,6 +103,9 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:text="@string/weight_units"
+        android:textColor="#9C27B0"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/radioGroup2"
         app:layout_constraintStart_toStartOf="@+id/radioGroup2" />
 
@@ -100,13 +122,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="@string/millilitter" />
+            android:text="@string/millilitter"
+            android:textColor="#9C27B0"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <RadioButton
             android:id="@+id/gTB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/weight_units" />
+            android:text="@string/weight_units"
+            android:textColor="#9C27B0"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
     </RadioGroup>
 
@@ -115,6 +143,9 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:text="@string/Liquid_measurring_unit"
+        android:textColor="#9C27B0"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/radioGroup3"
         app:layout_constraintStart_toStartOf="@+id/radioGroup3" />
 
@@ -131,13 +162,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="עיגול לשלמים" />
+            android:text="עיגול לשלמים"
+            android:textColor="#9C27B0"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <RadioButton
             android:id="@+id/notRoundRBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ללא עיגול" />
+            android:text="ללא עיגול"
+            android:textColor="#9C27B0"
+            android:textSize="18sp"
+            android:textStyle="bold" />
     </RadioGroup>
 
     <TextView
@@ -146,6 +183,9 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:text="עיגול משקלים"
+        android:textColor="#9C27B0"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/roundingGRBtn"
         app:layout_constraintStart_toStartOf="@+id/roundingGRBtn" />
 </androidx.constraintlayout.widget.ConstraintLayout>
